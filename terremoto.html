@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Earthquake greater than 6.0.</h2>
+
+<p id="demo"></p>
+<p id="detalhe"></p>
+
+<script>
+
+var xmlhttp = new XMLHttpRequest();
+
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myObj = JSON.parse(this.responseText);
+        document.getElementById("demo").innerHTML = "Earthquakes: "+myObj.metadata.count;
+        document.getElementById("detalhe").innerHTML = "Earthquakes: "+myObj.features[0].properties.place+" - Mag = "+myObj.features[0].properties.mag;
+    }
+};
+
+xmlhttp.open("GET", "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson", true);
+xmlhttp.send();
+
+</script>
+
+
+
+</body>
+</html>
