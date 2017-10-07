@@ -3,9 +3,8 @@
 <body>
 
 <h2>Earthquake greater than 6.0.</h2>
-
-<p id="demo"></p>
-<p id="detalhe"></p>
+<div id="summary"> </div>
+<div id="tablePrint"> </div>
 
 <script>
 
@@ -14,8 +13,15 @@ var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var myObj = JSON.parse(this.responseText);
-        document.getElementById("demo").innerHTML = "Earthquakes: "+myObj.metadata.count;
-        document.getElementById("detalhe").innerHTML = "Earthquakes: "+myObj.features[0].properties.place+" - Mag = "+myObj.features[0].properties.mag;
+        
+        //Prints total number of Earthquakes read from USGS.gov site.
+        document.getElementById("summary").innerHTML = "Total number of Earthquakes: " + myObj.metadata.count;
+        
+        //assembles table containing data pertaining to each earhquake
+        var myTable=myObj.features[0].properties.place + " - Mag = " + myObj.features[0].properties.mag;
+
+        //displays the assembled table
+        document.getElementById('tablePrint').innerHTML = myTable;
     }
 };
 
