@@ -18,9 +18,8 @@
 <body>
 
 <h2>Significant Earthquakes, past 30 days.</h2>
-<div id="summary"> </div>
 <div id="tablePrint"> </div>
-
+<div id="summary"> </div>
 <script>
 
 var xmlhttp = new XMLHttpRequest();
@@ -30,19 +29,23 @@ xmlhttp.onreadystatechange = function() {
         var myObj = JSON.parse(this.responseText);
         
         var totalEarthquakes = parseInt(myObj.metadata.count);
-
         //Prints total number of Earthquakes read from USGS.gov site.
         document.getElementById("summary").innerHTML = "Total number of Earthquakes: " + myObj.metadata.count;
         
         //assembles table containing data pertaining to each earhquake
-        var myTable="<table class='table table-striped'>";
+        //assembles table heading
+        var myTable="<table class='table table-striped' style='width:500px'>";
+        
+        myTable = myTable + "<thead><tr><th>Location</th><th>Magnitude</th></tr></thead>";
 
 
+        //assembles table rows
+        myTable = myTable + "<tbody>";
         for( var i = 0; i < totalEarthquakes; i++ ){
-            myTable = myTable + "<tr><td>" + myObj.features[i].properties.place + " - Mag = " + myObj.features[i].properties.mag + "</td></tr>";
+            myTable = myTable + "<tr><td>" + myObj.features[i].properties.place + "</td><td>" + myObj.features[i].properties.mag + "</td></tr>";
         }
         
-        myTable = myTable + "</table>";
+        myTable = myTable + "</tbody></table>";
 
         //displays the assembled table
         document.getElementById('tablePrint').innerHTML = myTable;
