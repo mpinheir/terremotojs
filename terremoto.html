@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<h2>Earthquake greater than 6.0.</h2>
+<h2>Earthquakes greater than 6.0.</h2>
 <div id="summary"> </div>
 <div id="tablePrint"> </div>
 
@@ -14,11 +14,20 @@ xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var myObj = JSON.parse(this.responseText);
         
+        var totalEarthquakes = parseInt(myObj.metadata.count);
+
         //Prints total number of Earthquakes read from USGS.gov site.
         document.getElementById("summary").innerHTML = "Total number of Earthquakes: " + myObj.metadata.count;
         
         //assembles table containing data pertaining to each earhquake
-        var myTable=myObj.features[0].properties.place + " - Mag = " + myObj.features[0].properties.mag;
+        var myTable="<table>";
+
+
+        for( var i = 0; i < totalEarthquakes; i++ ){
+            myTable = myTable + "<tr><td>" + myObj.features[i].properties.place + " - Mag = " + myObj.features[i].properties.mag + "</td></tr>";
+        }
+        
+        myTable = myTable + "</table>";
 
         //displays the assembled table
         document.getElementById('tablePrint').innerHTML = myTable;
