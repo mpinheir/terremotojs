@@ -36,13 +36,14 @@ xmlhttp.onreadystatechange = function() {
         //assembles table heading
         var myTable="<table class='table table-striped' style='width:500px'>";
         
-        myTable = myTable + "<thead><tr><th>Location</th><th>Magnitude</th></tr></thead>";
+        myTable = myTable + "<thead><tr><th>Location</th><th>Magnitude</th><th>Longitude</th><th>Latitude</th></tr></thead>";
 
 
         //assembles table rows
         myTable = myTable + "<tbody>";
         for( var i = 0; i < totalEarthquakes; i++ ){
-            myTable = myTable + "<tr><td>" + myObj.features[i].properties.place + "</td><td>" + myObj.features[i].properties.mag + "</td></tr>";
+            myTable = myTable + "<tr><td>" + myObj.features[i].properties.place + "</td><td>" + myObj.features[i].properties.mag + "</td>";
+            myTable = myTable + "<td>" + myObj.features[i].geometry.coordinates[0] + "</td><td>" + myObj.features[i].geometry.coordinates[1] + "</td></tr>";
         }
         
         myTable = myTable + "</tbody></table>";
