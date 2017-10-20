@@ -10,7 +10,7 @@ xmlhttp.onreadystatechange = function() {
         
         //assembles table containing data pertaining to each earhquake
         //assembles table heading
-        var myTable="<table class='table table-striped' style='width:800px'>";
+        var myTable="<table class='table table-striped'>";
         
         myTable = myTable + "<thead><tr><th>Location</th><th>Magnitude</th><th>Longitude</th><th>Latitude</th><th>Depth</th></tr></thead>";
 
