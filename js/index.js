@@ -25,7 +25,7 @@ xmlhttp.onreadystatechange = function() {
             myTable = myTable + "<td>" + myObj.features[i].geometry.coordinates[0] + "</td><td>" + myObj.features[i].geometry.coordinates[1] + "</td>";
 
             //adds latitude and madnitude to table row
-            myTable = myTable + "<td>" + myObj.features[i].geometry.coordinates[2] + " Km " + "</td><tr>";
+            myTable = myTable + "<td>" + myObj.features[i].geometry.coordinates[2] + " Km " + "</td></tr>";
 
         }
         
