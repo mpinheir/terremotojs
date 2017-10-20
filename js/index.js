@@ -6,7 +6,7 @@ xmlhttp.onreadystatechange = function() {
         
         var totalEarthquakes = parseInt(myObj.metadata.count);
         //Prints total number of Earthquakes read from USGS.gov site.
-        document.getElementById("summary").innerHTML = "Total number of Earthquakes: " + myObj.metadata.count;
+        document.querySelector(".summary span").innerHTML = myObj.metadata.count;
         
         //assembles table containing data pertaining to each earhquake
         //assembles table heading
