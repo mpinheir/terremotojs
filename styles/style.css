@@ -1,0 +1,19 @@
+.content{
+  width: 80rem;
+  margin: auto;
+}
+
+.summary{
+  margin: 1.5rem 0 1.5rem;
+  padding: 1rem 1rem 1rem .7rem;
+  border: solid 1px lightgray;
+  border-radius: 8px;
+  width: 24rem;
+}
+
+.summary span{
+  border-left: solid 1px lightgray;
+  margin-left: 1rem;
+  padding: 1rem 0 1rem .9rem;
+  font-size: 1.3em;
+}
