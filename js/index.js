@@ -14,10 +14,10 @@ xmlhttp.onreadystatechange = function() {
         
         myTable = myTable + "<thead><tr><th>Location</th><th>Date</th><th>Magnitude</th><th>Longitude</th><th>Latitude</th><th>Depth</th></tr></thead>";
 
-
         //assembles table rows
         myTable = myTable + "<tbody>";
         for( var i = 0; i < totalEarthquakes; i++ ){
+          
             //adds place  to table row
             myTable = myTable + "<tr><td>" + myObj.features[i].properties.place + "</td>";
 
