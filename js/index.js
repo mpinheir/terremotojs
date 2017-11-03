@@ -14,17 +14,10 @@ xmlhttp.onreadystatechange = function() {
         
         myTable = myTable + "<thead><tr><th>Location</th><th>Date</th><th>Magnitude</th><th>Longitude</th><th>Latitude</th><th>Depth</th></tr></thead>";
 
-<<<<<<< HEAD
-
-        //assembles table rows
-        myTable = myTable + "<tbody>";
-        for( var i = 0; i < totalEarthquakes; i++ ){
-=======
         //assembles table rows
         myTable = myTable + "<tbody>";
         for( var i = 0; i < totalEarthquakes; i++ ){
           
->>>>>>> 946cb777b2d346cc215dfbadb6b2d0128954c17f
             //adds place  to table row
             myTable = myTable + "<tr><td>" + myObj.features[i].properties.place + "</td>";
 
@@ -33,7 +26,7 @@ xmlhttp.onreadystatechange = function() {
             myTable = myTable + "<td>" + date.toDateString() + "</td>";
 
             //adds magnitude table row
-            myTable = myTable + "</td><td>" + myObj.features[i].properties.mag + "</td>";
+            myTable = myTable + "<td>" + myObj.features[i].properties.mag + "</td>";
 
             //adds longitude and latitude to table row
             myTable = myTable + "<td>" + myObj.features[i].geometry.coordinates[0] + "</td><td>" + myObj.features[i].geometry.coordinates[1] + "</td>";
