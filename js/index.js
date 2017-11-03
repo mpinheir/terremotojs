@@ -12,19 +12,26 @@ xmlhttp.onreadystatechange = function() {
         //assembles table heading
         var myTable="<table class='table table-striped'>";
         
-        myTable = myTable + "<thead><tr><th>Location</th><th>Magnitude</th><th>Longitude</th><th>Latitude</th><th>Depth</th></tr></thead>";
-
+        myTable = myTable + "<thead><tr><th>Location</th><th>Date</th><th>Magnitude</th><th>Longitude</th><th>Latitude</th><th>Depth</th></tr></thead>";
 
         //assembles table rows
         myTable = myTable + "<tbody>";
         for( var i = 0; i < totalEarthquakes; i++ ){
-            //adds place and magnitude to table row
-            myTable = myTable + "<tr><td>" + myObj.features[i].properties.place + "</td><td>" + myObj.features[i].properties.mag + "</td>";
+          
+            //adds place  to table row
+            myTable = myTable + "<tr><td>" + myObj.features[i].properties.place + "</td>";
 
-            //adds latitude and madnitude to table row
+            //adds date to table row
+            let date = new Date(myObj.features[i].properties.time);
+            myTable = myTable + "<td>" + date.toDateString() + "</td>";
+
+            //adds magnitude table row
+            myTable = myTable + "</td><td>" + myObj.features[i].properties.mag + "</td>";
+
+            //adds longitude and latitude to table row
             myTable = myTable + "<td>" + myObj.features[i].geometry.coordinates[0] + "</td><td>" + myObj.features[i].geometry.coordinates[1] + "</td>";
 
-            //adds latitude and madnitude to table row
+            //adds depth to table row
             myTable = myTable + "<td>" + myObj.features[i].geometry.coordinates[2] + " Km " + "</td></tr>";
 
         }
