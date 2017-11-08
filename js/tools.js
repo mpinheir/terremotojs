@@ -1,14 +1,24 @@
 function sortBy(criteria, data, order){
 
   if(isNaN(criteria)){
+
     if(order == criteria){
       data.reverse();
     } else {
-      data.sort(function(a, b){
-         return b.properties[criteria] - a.properties[criteria];
-       });
+
+      if (criteria == "place"){
+        data.sort(function(a, b){
+          return treatString(a, b, criteria);
+        });
+      } else {
+        data.sort(function(a, b){
+           return b.properties[criteria] - a.properties[criteria];
+        });
+      }
     }
+
   } else{
+
     if(order == criteria){
       data.reverse();
     } else{
@@ -17,6 +27,7 @@ function sortBy(criteria, data, order){
      });
     }
   }
+
   return data
 }
 
@@ -32,7 +43,7 @@ function assembleTable(data){
       table += '<td>' + date.toDateString() + '</td>';
 
       //adds magnitude table row
-      table += '<td>' + '<span style="color:' + data[i].properties.alert + '">&#9654 </span>' + data[i].properties.mag + '</td>';
+      table += '<td>' + '<span style="color:' + data[i].properties.alert + '">&#9654 </span>' + data[i].properties.mag.toFixed(2) + '</td>';
 
       //adds longitude and latitude to table row
       table += '<td>' + data[i].geometry.coordinates[0] + '</td><td>' + data[i].geometry.coordinates[1] + '</td>';
@@ -48,4 +59,16 @@ function updateTable(criteria, data, order){
   data = sortBy(criteria.getAttribute('value'), data, order);
   document.querySelector('.table tbody').innerHTML = '';
   document.querySelector('.table tbody').innerHTML = assembleTable(data);
+}
+
+function treatString(a, b, criteria){
+  let nameA = a.properties[criteria].toUpperCase();
+  let nameB = b.properties[criteria].toUpperCase();
+  if (nameA < nameB) {
+    return -1;
+  }
+  if (nameA > nameB) {
+    return 1;
+  }
+  return 0; 
 }
