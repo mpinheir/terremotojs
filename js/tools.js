@@ -32,7 +32,7 @@ function assembleTable(data){
       table += '<td>' + date.toDateString() + '</td>';
 
       //adds magnitude table row
-      table += '<td style="color:' + data[i].properties.alert + '; font-weight: bold">' + data[i].properties.mag + '</td>';
+      table += '<td>' + '<span style="color:' + data[i].properties.alert + '">&#9654 </span>' + data[i].properties.mag + '</td>';
 
       //adds longitude and latitude to table row
       table += '<td>' + data[i].geometry.coordinates[0] + '</td><td>' + data[i].geometry.coordinates[1] + '</td>';
