@@ -1,11 +1,10 @@
 function sortBy(criteria, data, order){
 
-  if(isNaN(criteria)){
-
-    if(order == criteria){
-      data.reverse();
-    } else {
-
+  if(order == criteria){
+    data.reverse();
+  } else {
+    
+    if(isNaN(criteria)){
       if (criteria == "place"){
         data.sort(function(a, b){
           return treatString(a, b, criteria);
@@ -15,19 +14,12 @@ function sortBy(criteria, data, order){
            return b.properties[criteria] - a.properties[criteria];
         });
       }
-    }
-
-  } else{
-
-    if(order == criteria){
-      data.reverse();
-    } else{
-      data.sort(function(a, b){
-       return b.geometry.coordinates[criteria] - a.geometry.coordinates[criteria];
-     });
-    }
+    } else {
+        data.sort(function(a, b){
+          return b.geometry.coordinates[criteria] - a.geometry.coordinates[criteria];
+        }); 
+      }
   }
-
   return data
 }
 
