@@ -6,15 +6,18 @@ function sortBy(criteria, data, order){
     
     if(isNaN(criteria)){
       if (criteria == "place"){
+        //special rule for strings
         data.sort(function(a, b){
           return treatString(a, b, criteria);
         });
       } else {
+        //sort by properties
         data.sort(function(a, b){
            return b.properties[criteria] - a.properties[criteria];
         });
       }
     } else {
+      //sort by geometry
         data.sort(function(a, b){
           return b.geometry.coordinates[criteria] - a.geometry.coordinates[criteria];
         }); 

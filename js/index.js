@@ -21,9 +21,11 @@ xmlhttp.onreadystatechange = function() {
         //displays the assembled table
         document.getElementById('tablePrint').innerHTML = myTable;
 
+        //select the criteria for sorting
         var tableHeads = document.querySelectorAll('.table th');
 
         var order = "time";
+        //add the click event to the table heads
         tableHeads.forEach(function(head){
             head.onclick = function(){
                 updateTable(head, earthquakesInfo, order);
