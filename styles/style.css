@@ -3,6 +3,13 @@
   margin: auto;
 }
 
+.table th{
+  cursor: pointer;
+}
+.table tr :nth-child(3){
+  text-align: center;
+}
+
 .summary{
   margin: 1.5rem 0 1.5rem;
   padding: 1rem 1rem 1rem .7rem;
