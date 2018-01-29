@@ -115,6 +115,7 @@ const UIController = (function() {
 
 })();
 
+//Main Function
 (function(UICtrl, utils) {
 
     // This will be used to info the current col to be sorted
