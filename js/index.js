@@ -115,8 +115,7 @@ const UIController = (function() {
 
 })();
 
-
-const main = (function(UICtrl, utils) {
+(function(UICtrl, utils) {
 
     // This will be used to info the current col to be sorted
     let order = 'time'
