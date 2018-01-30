@@ -1,26 +1,52 @@
-.content{
+.content {
   width: 80rem;
   margin: auto;
 }
 
-.table th{
+.jumbotron {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+.table th {
   cursor: pointer;
 }
-.table tr :nth-child(3){
+
+.table td:nth-child(6) {
+  width: 10rem;
+}
+
+.table td:nth-child(1){
+  width: 25rem;
+}
+
+.table th:hover {
+  color: #696969;
+}
+
+.table tr :nth-child(3) {
   text-align: center;
 }
 
-.summary{
-  margin: 1.5rem 0 1.5rem;
-  padding: 1rem 1rem 1rem .7rem;
-  border: solid 1px lightgray;
-  border-radius: 8px;
-  width: 24rem;
+.summary {
+  font-weight: bold;
+  width: 29rem;
+  position: absolute;
+  top: 11.8rem;  
+  right: 0px;
 }
 
-.summary span{
-  border-left: solid 1px lightgray;
-  margin-left: 1rem;
-  padding: 1rem 0 1rem .9rem;
+.summary span.test {
+  font-size: 17px !important;
+  color: #fff;
+}
+
+.summary span.amount {
+  background-color: rgb(103, 255, 136);
+  border-radius: 20%;
+  text-align: center;
+  position: relative;
+  left: 1rem;
+  padding: 10px 10px;
   font-size: 1.3em;
 }
