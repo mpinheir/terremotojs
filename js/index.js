@@ -60,7 +60,7 @@ const tools = (function() {
                     <tr>
                         <td>${element.properties.place}</td>
                         <td>${_getTime(element.properties.time)}</td>
-                        <td><span style='color:${element.properties.alert}'>&#9654</span></td>
+                        <td><span style='color:${element.properties.alert}'>&#9654 ${element.properties.mag}</span></td>
                         <td>${element.geometry.coordinates[0]}</td>
                         <td>${element.geometry.coordinates[1]}</td>
                         <td>${element.geometry.coordinates[2]} Km</td>
