@@ -118,7 +118,7 @@ const UIController = (function() {
 //Main Function
 (function(UICtrl, utils) {
 
-    // The stage of this var will change when the event 'onclick' is triggered by a user
+    // The stage of this var will be changed when the event 'onclick' is triggered by a user
     let order = 'time'
 
     fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson')
