@@ -118,7 +118,7 @@ const UIController = (function() {
 //Main Function
 (function(UICtrl, utils) {
 
-    // This will be used to info the current col to be sorted
+    // The stage of this var will change when the event 'onclick' is triggered by a user
     let order = 'time'
 
     fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson')
