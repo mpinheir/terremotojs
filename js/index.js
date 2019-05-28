@@ -64,6 +64,17 @@ const tools = (function() {
                         <td>${element.geometry.coordinates[0]}</td>
                         <td>${element.geometry.coordinates[1]}</td>
                         <td>${element.geometry.coordinates[2]} Km</td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar bg-danger" 
+                                     role="progressbar" 
+                                     style="width: ${(element.properties.mag/9.5)*100}%" 
+                                     aria-valuenow="${(element.properties.mag/9.5)*100}" 
+                                     aria-valuemin="0" 
+                                     aria-valuemax="100">
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                 `
             });
@@ -144,6 +155,7 @@ const UIController = (function() {
                     <th value="0">Longitude</th>
                     <th value="1">Latitude</th>
                     <th value="2">Depth</th>
+                    <th value="mag">Danger</th>
                 </thead>
                 <tbody>
                     ${utils.assembleTable(obj.earthQuakesInfo)}
