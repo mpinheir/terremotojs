@@ -32,17 +32,18 @@
   font-weight: bold;
   position: absolute;
   top: 11.8rem;  
-  left: 88rem;
+  right: 73rem;
 }
 
 .summary span.test {
   font-size: 17px !important;
   color: #fff;
+  text-align: center;
 }
 
 .summary span.amount {
   background-color: rgb(103, 121, 255);
-  border-radius: 20%;
+  border-radius: 10%;
   position: relative;
   left: 1rem;
   padding: 10px 10px;
