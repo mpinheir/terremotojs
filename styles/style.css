@@ -29,10 +29,8 @@
 }
 
 .summary {
-  font-weight: bold;
-  position: absolute;
-  top: 11.8rem;  
-  right: 73rem;
+  width: 100%;
+  height: 100px;
 }
 
 .summary span.test {
@@ -44,8 +42,8 @@
 .summary span.amount {
   background-color: rgb(103, 121, 255);
   border-radius: 10%;
-  position: relative;
-  left: 1rem;
-  padding: 10px 10px;
-  font-size: 1.3em;
+  
+  
+  
 }
+
