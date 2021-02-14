@@ -4,7 +4,7 @@
 }
 
 .jumbotron {
-  background-color: #1f1f1f;
+  background-color: #0541b1;
   color: #fff;
 }
 
@@ -30,20 +30,12 @@
 
 .summary {
   width: 100%;
-  height: 100px;
+  height: 5px;
 }
 
-.summary span.test {
-  font-size: 17px !important;
-  color: #fff;
-  text-align: center;
-}
 
 .summary span.amount {
-  background-color: rgb(103, 121, 255);
+  background-color: #0541b1;
   border-radius: 10%;
-  
-  
-  
 }
 
