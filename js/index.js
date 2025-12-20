@@ -64,7 +64,7 @@ const tools = (function() {
                         <td>${element.geometry.coordinates[0]}</td>
                         <td>${element.geometry.coordinates[1]}</td>
                         <td>${element.geometry.coordinates[2].toFixed(2)} Km</td>
-                        <td><a href="https://www.google.com/maps?q=${element.geometry.coordinates[1]},${element.geometry.coordinates[0]}" target="_blank" class="btn btn-sm btn-primary">View on Map</a></td>
+                        <td><a href="https://www.google.com/maps?q=${element.geometry.coordinates[1]},${element.geometry.coordinates[0]}" target="_blank" class="btn btn-sm btn-primary">Map</a></td>
                     </tr>
                 `
             });
