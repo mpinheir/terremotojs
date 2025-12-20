@@ -8,6 +8,11 @@
   color: #fff;
 }
 
+.myfooter {
+  background-color: #0541b1;
+  color: #fff;
+}
+
 .table th {
   cursor: pointer;
 }
